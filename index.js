@@ -19,14 +19,17 @@ const connect = async () => {
 mongoose.connection.on("disconnected", ()=>{
   console.log("mongoDB disconnected...")
 })
-mongoose.connection.on("connected", ()=>{
-  console.log("mongoDB connected..")
-})
 
 
-app.get("/", (req,res)=>{
-  res.send("hello first request");
-})
+
+// mongoose.connection.on("connected", ()=>{
+//   console.log("mongoDB connected..")
+// })
+
+
+// app.get("/users", (req,res)=>{
+//   res.send("hello first request");
+// })
 
 
 app.listen(5000, ()=>{
