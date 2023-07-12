@@ -25,7 +25,7 @@ export const verifyUser = (req, res, next)=>{
 }
 
 export const verifyAdmin = (req, res, next)=>{
-    verifyToken(req, res, ()=>{
+    verifyToken(req, res, ()=>{ //(req, res, next) next remove bcz of next keyword sytem not identitfy user or admin
         if(req.user.isAdmin){
             next()
         }else{
