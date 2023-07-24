@@ -20,6 +20,7 @@ const List = () => {
   const { data, loading, error, reFetch } = useFetch(
     `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
 
+    
   const handleClick = ()=> {
     reFetch();
   }
@@ -48,7 +49,9 @@ const List = () => {
                   minDate={new Date()}
                   ranges={dates}
                 />
+                
               )}
+              {/* {console.log(dates)} */}
             </div>
             <div className="lsItem">
               <label>Options</label>

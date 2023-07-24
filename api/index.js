@@ -59,7 +59,7 @@ app.use((err, req,res,next)=>{
 app.listen(5000, ()=>{
     connect();
     console.log("Connected to backend....");
-})
+});
 
 
 // mongoose.connect("mongodb://127.0.0.1:27017/booking");
