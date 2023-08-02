@@ -9,6 +9,7 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
+import { userColumns } from "./datatablesource";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -43,7 +44,7 @@ function App() {
               } />
               <Route path=":userId" element={
                 <ProtectedRoute>
-                  <Single />
+                  <Single columns={userColumns} />
                 </ProtectedRoute>
               } />
               <Route
