@@ -6,18 +6,18 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const Datatable = () => {
+const Datatable = ({columns}) => {
 
   const location = useLocation();
   const path = location.pathname.split("/")[1];
-  const [list, setList] = useState();
+  const [list, setList] = useState("");
 
   const { data, loading, error } = useFetch(`/${path}`);
 
   useEffect(() => {
     setList(data);
   }, [data]);
-  console.log(list);
+  // console.log(list);
 
   const handleDelete = async (id) => {
     try {
@@ -58,8 +58,8 @@ const Datatable = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={data}
-        columns={userColumns.concat(actionColumn)}
+        rows={list}
+        columns={columns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
