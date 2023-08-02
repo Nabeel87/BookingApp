@@ -39,12 +39,12 @@ function App() {
             <Route path="users">
               <Route index element={
                 <ProtectedRoute>
-                  <List />
+                  <List columns={userColumns} />
                 </ProtectedRoute>
               } />
               <Route path=":userId" element={
                 <ProtectedRoute>
-                  <Single columns={userColumns} />
+                  <Single />
                 </ProtectedRoute>
               } />
               <Route
@@ -71,7 +71,7 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <New inputs={productInputs} title="Add New Product" />
+                    <New inputs={productInputs} title="Add New Hotel" />
                   </ProtectedRoute>
                 }
               />
